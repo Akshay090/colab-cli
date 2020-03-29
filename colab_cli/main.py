@@ -3,10 +3,9 @@ from colab_cli.cli_open import cli_open
 from shutil import copy
 from pathlib import Path
 import typer
-import git
-import os
-import time
 import json
+import glob
+import os
 
 from colab_cli.cli_update import cli_update
 from colab_cli.utilities.path_process import process_file_path
@@ -17,11 +16,6 @@ app_dir = Path(app_dir)
 config_path = app_dir / 'config.json'
 
 app = typer.Typer()
-
-
-def get_git_root(path):
-    git_repo = git.Repo(path, search_parent_directories=True)
-    return git_repo.working_tree_dir
 
 
 @app.callback()
@@ -70,6 +64,15 @@ def set_config(file_path: Path = typer.Argument(
 
 
 @app.command()
+def list_nb():
+    """
+      list ipynb in current directory
+      """
+    for file in glob.glob("*.ipynb"):
+        print(f"{file}")
+
+
+@app.command()
 def open_nb(file_path: Path = typer.Argument(
     ...,
     exists=True,
@@ -82,7 +85,6 @@ def open_nb(file_path: Path = typer.Argument(
     """
     Open ipynb from colab,if not exist adds local file and open
     """
-    start_time = time.time()
     if file_path is None:
         typer.echo("No file")
         raise typer.Abort()
@@ -134,7 +136,6 @@ def update(file_path: Path = typer.Argument(
     """
     Replace (Remote)ipynb in google colab with local ipynb
     """
-    start_time = time.time()
     if file_path is None:
         typer.echo("No file")
         raise typer.Abort()
