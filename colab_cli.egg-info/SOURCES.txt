@@ -1,0 +1,13 @@
+README.md
+setup.py
+colab_cli/__init__.py
+colab_cli/client_secrets.json
+colab_cli/gdrive_auth.py
+colab_cli/gdrive_upload.py
+colab_cli/main.py
+colab_cli.egg-info/PKG-INFO
+colab_cli.egg-info/SOURCES.txt
+colab_cli.egg-info/dependency_links.txt
+colab_cli.egg-info/entry_points.txt
+colab_cli.egg-info/requires.txt
+colab_cli.egg-info/top_level.txt

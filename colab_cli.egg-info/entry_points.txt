@@ -1,0 +1,3 @@
+[console_scripts]
+colab-cli = colab_cli.main:app
+

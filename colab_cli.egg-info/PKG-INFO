@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: colab-cli
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Akshay Ashok
+Author-email: aks28id@gmail.com
+License: UNKNOWN
+Description: # Colab Cli
+        
+        The awesome Colab Cli
+Platform: UNKNOWN
+Requires-Python: >=3.7,<4.0
