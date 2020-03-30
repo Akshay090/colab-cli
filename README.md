@@ -29,8 +29,29 @@ python3.7 -m pip install colab-cli
 
 STEP-1: 
  
- Get your client_secrets.json, [instructions given here](https://pythonhosted.org/PyDrive/quickstart.html),
-only follow till the part where you have client_secrets.json in a local directory
+First we need to get your client_secrets.json file for 
+OAuth2.0 authentication for Drive API,
+
+1. Go to [APIs Console](https://console.developers.google.com/iam-admin/projects) 
+and make your own project.
+2. Search for ‘Google Drive API’, select the entry, and click ‘Enable’.
+3. Select ‘Credentials’ from the left menu, click ‘Create Credentials’, select ‘OAuth client ID’.
+4. Now, the product name and consent screen need to be set -> click ‘Configure consent screen’ and follow the instructions. Once finished:
+    
+    a. Select ‘Application type’ to be Web application.
+    
+    b. Enter an appropriate name.
+    
+    c. Input http://localhost:8080 for ‘Authorized JavaScript origins’.
+    
+    d. Input http://localhost:8080/ for ‘Authorized redirect URIs’.
+    
+    e. Click ‘Save’.
+    
+5. Click ‘Download JSON’ on the right side of Client ID to 
+download client_secret_\<really long ID>.json.
+
+6. Rename the file to “client_secrets.json” and place it in any directory.
 
 STEP-2: 
 
@@ -61,15 +82,16 @@ colab-cli list-nb
 NOTE : Please work with git repo initialized, else below 
 commands will not work
 
-* Open local ipynb file in google colab for first time and remote copy for subsequent time
+* Open local ipynb file in google colab for first time
+> Note: It opens the copy of filein gdrive from second time onwards.
 ```sh
 colab-cli open-nb lesson1-pets.ipynb
 ``` 
-* Now you have made some changes to ipynb in colab, get the modified file locally by
+* If you need to get modified ipynb from gdrive local directory use 
 ```sh
 colab-cli pull-nb lesson1-pets.ipynb
 ``` 
-* Made some changes to ipynb locally, push it to drive
+* Made some changes to ipynb locally, push it to gdrive
 ```sh
 colab-cli push-nb lesson1-pets.ipynb
 ``` 
