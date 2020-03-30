@@ -53,11 +53,14 @@ Now we need to set the google account user id, goto your browser and see how man
 
 ```sh
 colab-cli --help
-```
+``` 
 * List local ipynb
 ```sh
 colab-cli list-nb
 ``` 
+NOTE : Please work with git repo initialized, else below 
+commands will not work
+
 * Open local ipynb file in google colab for first time and remote copy for subsequent time
 ```sh
 colab-cli open-nb lesson1-pets.ipynb
