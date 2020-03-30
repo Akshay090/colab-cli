@@ -4,7 +4,7 @@
 
 > Experience better workflow with google colab, local jupyter notebooks and git
 
-### ✨ [Demo](https://github.com/Akshay090/colab-cli/demo)
+### ✨ [Demo](https://github.com/Akshay090/colab-cli/demo.gif)
 
 ## Install
 
