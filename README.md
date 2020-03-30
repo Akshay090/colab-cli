@@ -70,7 +70,7 @@ colab-cli push-nb lesson1-pets.ipynb
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check [issues page](https://github.com/Akshay090/colab-cli/issues). You can also take a look at the [contributing guide](https://github.com/Akshay090/colab-cli/contributing.md).
+Feel free to check [issues page](https://github.com/Akshay090/colab-cli/issues). You can also take a look at the [contributing guide](https://github.com/Akshay090/colab-cli/blob/master/CONTRIBUTING.md).
 
 ## Show your support
 
