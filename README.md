@@ -4,13 +4,26 @@
 
 > Experience better workflow with google colab, local jupyter notebooks and git
 
+You can now easily manage working with jupyter notebooks 
+and google colab from cli. 
+
+with ```open-nb``` upload local file to drive opens it in colab,
+now you can edit and save it locally with ```pull-nb``` add modified 
+file to git, if you modified file locally use ```push-nb``` to update 
+file in drive with your local file.
+ 
+
 ### ✨ Demo
 [![demo](https://asciinema.org/a/314749.svg)](https://asciinema.org/a/314749?autoplay=1)
 
 ## Install
 
 ```sh
-python -m pip install colab-cli or python3.7 -m pip install colab-cli
+python -m pip install colab-cli
+```
+OR
+```sh
+python3.7 -m pip install colab-cli
 ```
 ## Set-up
 
