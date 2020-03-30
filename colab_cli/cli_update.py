@@ -6,7 +6,7 @@ from colab_cli.utilities.files import create_new_file, get_file_meta
 from colab_cli.utilities.folders import get_colab_folder_id, fold_struct_gen, delete_folder
 
 
-def cli_update(folder_struct_list, upload_file_name, upload_file_abs_path):
+def cli_push(folder_struct_list, upload_file_name, upload_file_abs_path):
     """
     Replace (Remote)ipynb in google colab with local ipynb
     :param folder_struct_list:

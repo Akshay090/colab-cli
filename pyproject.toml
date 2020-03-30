@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "colab-cli"
-version = "0.1.0"
-description = ""
+version = "2.2.0"
+description = "Experience better workflow with google colab, local jupyter notebooks and git"
 authors = ["Akshay Ashok <aks28id@gmail.com>"]
 readme = "README.md"
 

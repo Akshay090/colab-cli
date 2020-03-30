@@ -1,2 +1,4 @@
 .idea/
 /colab_cli/client_secrets.json
+/dist/
+__pycache__/

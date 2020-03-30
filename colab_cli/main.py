@@ -7,7 +7,7 @@ import json
 import glob
 import os
 
-from colab_cli.cli_update import cli_update
+from colab_cli.cli_update import cli_push
 from colab_cli.utilities.path_process import process_file_path
 
 APP_NAME = "colab-cli"
@@ -21,14 +21,14 @@ app = typer.Typer()
 @app.callback()
 def callback():
     """
-    Awesome colab cli
+    Experience better workflow with google colab, local jupyter notebooks and git
     """
 
 
 @app.command()
 def set_auth_user(user_no: str):
     """
-      Set auth user
+      Set auth user, count start from zero
       """
     config = {'auth_user_id': user_no}
     print(config)
@@ -98,7 +98,7 @@ def open_nb(file_path: Path = typer.Argument(
 
 
 @app.command()
-def pull(file_path: Path = typer.Argument(
+def pull_nb(file_path: Path = typer.Argument(
     ...,
     exists=True,
     file_okay=True,
@@ -124,7 +124,7 @@ def pull(file_path: Path = typer.Argument(
 
 
 @app.command()
-def update(file_path: Path = typer.Argument(
+def push_nb(file_path: Path = typer.Argument(
     ...,
     exists=True,
     file_okay=True,
@@ -142,7 +142,7 @@ def update(file_path: Path = typer.Argument(
     if file_path.is_file():
         folder_struct_list, upload_file_name, file_path = process_file_path(file_path)
 
-        cli_update(folder_struct_list, upload_file_name, file_path)
+        cli_push(folder_struct_list, upload_file_name, file_path)
     elif file_path.is_dir():
         typer.echo("is a directory")
     elif not file_path.exists():
