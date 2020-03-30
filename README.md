@@ -1,6 +1,6 @@
 # Welcome to colab-cli 👋
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
-[![Twitter: aks2899](https://img.shields.io/twitter/follow/aks2899.svg?style=social)(https://twitter.com/aks2899)
+[![Twitter: aks2899](https://img.shields.io/twitter/follow/aks2899.svg?style=social)](https://twitter.com/aks2899)
 
 > Experience better workflow with google colab, local jupyter notebooks and git
 
