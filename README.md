@@ -7,11 +7,12 @@
 You can now easily manage working with jupyter notebooks 
 and google colab from cli. 
 
-with ```open-nb``` upload local file to drive opens it in colab,
-now you can edit and save it locally with ```pull-nb``` add modified 
-file to git, if you modified file locally use ```push-nb``` to update 
-file in drive with your local file.
- 
+# Features 
+* 🤠 Upload local jupyter notebook to gdrive from cli
+* 😮 Quick access to jupyter notebooks in gdrive from your cli
+* 🚀 Keeps jupyter notebooks organized in gdrive by creating local file structure in gdrive
+* 🤯 Sync local work on notebooks with gdrive
+* 🥂 Git friendly, pull changes from gdrive and commit to git
 
 ### ✨ Demo
 [![demo](https://asciinema.org/a/314749.svg)](https://asciinema.org/a/314749?autoplay=1)
@@ -83,7 +84,7 @@ NOTE : Please work with git repo initialized, else below
 commands will not work
 
 * Open local ipynb file in google colab for first time
-> Note: It opens the copy of filein gdrive from second time onwards.
+> Note: It opens the copy of file in gdrive from second time onwards.
 ```sh
 colab-cli open-nb lesson1-pets.ipynb
 ``` 
