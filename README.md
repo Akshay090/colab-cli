@@ -20,12 +20,9 @@ and google colab from cli.
 ## Install
 
 ```sh
-python -m pip install colab-cli
+pip3 install colab-cli
 ```
-OR
-```sh
-python3.7 -m pip install colab-cli
-```
+
 ## Set-up
 
 STEP-1: 
