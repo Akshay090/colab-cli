@@ -2,10 +2,22 @@ from pathlib import Path
 import git
 import os
 
+import typer
+from git import InvalidGitRepositoryError
+
+from colab_cli.utilities.git_root import Repo
+
 
 def get_git_root(path):
-    git_repo = git.Repo(path, search_parent_directories=True)
-    return git_repo.working_tree_dir
+
+    try:
+        git_repo = Repo(path, search_parent_directories=True)
+        return git_repo.working_tree_dir
+    except InvalidGitRepositoryError as no_repo_error:
+        message = f"no git repo initialized : please make sure you have initialized a git repo \n"
+        message = typer.style(message, fg=typer.colors.BRIGHT_RED, bold=True)
+        typer.echo(message)
+        raise typer.Exit()
 
 
 def process_file_path(file_path):

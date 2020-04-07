@@ -1,3 +1,4 @@
+import typer
 from send2trash import send2trash
 
 
@@ -12,22 +13,40 @@ def get_file_meta(file_name, parent_id):
 
 
 def create_new_file(drive, file_metadata, file_path, file_name, parent_id):
+    """
+    create new file in gdrive and retrun file id, if already exist then returns it's file id
+    :param drive:
+    :param file_metadata:
+    :param file_path:
+    :param file_name:
+    :param parent_id:
+    :return: file id
+    """
     fileList = drive.ListFile({'q': f"'{parent_id}' in parents and trashed=false"}).GetList()
-    CURRENT_FOLDER_EXIST = False
+    CURRENT_FILE_EXIST = False
     NEW_FILE_ID = None
     for file in fileList:
         # print('Title: %s, ID: %s' % (file['title'], file['id']))
         if file['title'] == file_name:  # folder already exists
-            CURRENT_FOLDER_EXIST = True
+            CURRENT_FILE_EXIST = True
             NEW_FILE_ID = file['id']
-    if CURRENT_FOLDER_EXIST:
+
+            message = f"\n {file['title']} already exist in drive, so opening it"
+            message = typer.style(message, fg=typer.colors.GREEN, bold=True)
+            typer.echo(message)
+    if CURRENT_FILE_EXIST:
         # print(f"file already exist")
         return NEW_FILE_ID
     file_new = drive.CreateFile(file_metadata)
-    file_new.SetContentFile(str(file_path))  # Set the content to the taken image
+    file_new.SetContentFile(str(file_path))  # Set the content of new file in drive as local file of path file_path
     file_new.Upload()  # Upload it
     # print('New file created:    ' + file_new['title'] + " " + file_new['id'])
     new_file_id = file_new['id']  # Get the folder id
+
+    message = f"\n new file created in gdrive"
+    message = typer.style(message, fg=typer.colors.GREEN, bold=True)
+    typer.echo(message)
+
     return new_file_id
 
 
@@ -54,4 +73,3 @@ def download_file(drive, file_name, file_abs_path, parent_id):
     if not CURRENT_FILE_EXIST:
         pass
         # print(f"file don't exist")
-

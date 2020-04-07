@@ -63,28 +63,6 @@ version = "0.4.3"
 
 [[package]]
 category = "main"
-description = "Git Object Database"
-name = "gitdb"
-optional = false
-python-versions = ">=3.4"
-version = "4.0.2"
-
-[package.dependencies]
-smmap = ">=3.0.1,<4"
-
-[[package]]
-category = "main"
-description = "Python Git Library"
-name = "gitpython"
-optional = false
-python-versions = ">=3.4"
-version = "3.1.0"
-
-[package.dependencies]
-gitdb = ">=4.0.1,<5"
-
-[[package]]
-category = "main"
 description = "Google API client core library"
 name = "google-api-core"
 optional = false
@@ -402,14 +380,6 @@ version = "1.14.0"
 
 [[package]]
 category = "main"
-description = "A pure Python implementation of a sliding window memory map manager"
-name = "smmap"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "3.0.1"
-
-[[package]]
-category = "main"
 description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
 name = "typer"
 optional = false
@@ -476,7 +446,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "e99fdfc20c59bc4f0e65616b26b110450bca8ababc7e47247e28bf084eaee1ca"
+content-hash = "0f29599843016baa7b8ca5d080042d37d191419ef892f1e80fbdf8db53f1c521"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -507,14 +477,6 @@ click = [
 colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
-]
-gitdb = [
-    {file = "gitdb-4.0.2-py3-none-any.whl", hash = "sha256:284a6a4554f954d6e737cddcff946404393e030b76a282c6640df8efd6b3da5e"},
-    {file = "gitdb-4.0.2.tar.gz", hash = "sha256:598e0096bb3175a0aab3a0b5aedaa18a9a25c6707e0eca0695ba1a0baf1b2150"},
-]
-gitpython = [
-    {file = "GitPython-3.1.0-py3-none-any.whl", hash = "sha256:43da89427bdf18bf07f1164c6d415750693b4d50e28fc9b68de706245147b9dd"},
-    {file = "GitPython-3.1.0.tar.gz", hash = "sha256:e426c3b587bd58c482f0b7fe6145ff4ac7ae6c82673fc656f489719abca6f4cb"},
 ]
 google-api-core = [
     {file = "google-api-core-1.16.0.tar.gz", hash = "sha256:92e962a087f1c4b8d1c5c88ade1c1dfd550047dcffb320c57ef6a534a20403e2"},
@@ -666,10 +628,6 @@ shellingham = [
 six = [
     {file = "six-1.14.0-py2.py3-none-any.whl", hash = "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"},
     {file = "six-1.14.0.tar.gz", hash = "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"},
-]
-smmap = [
-    {file = "smmap-3.0.1-py2.py3-none-any.whl", hash = "sha256:5fead614cf2de17ee0707a8c6a5f2aa5a2fc6c698c70993ba42f515485ffda78"},
-    {file = "smmap-3.0.1.tar.gz", hash = "sha256:171484fe62793e3626c8b05dd752eb2ca01854b0c55a1efc0dc4210fccb65446"},
 ]
 typer = [
     {file = "typer-0.1.0-py3-none-any.whl", hash = "sha256:7daf5337c9840b0101ca1966544e8f2c34354f877e24381e9e51f346625386da"},

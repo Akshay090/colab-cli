@@ -1,8 +1,6 @@
-from pathlib import Path
 import typer
-
 from colab_cli.gdrive_auth import drive_auth
-from colab_cli.utilities.checks import check_client_secret_exists
+from colab_cli.utilities.checks import check_all_config
 from colab_cli.utilities.files import download_file
 from colab_cli.utilities.folders import fold_struct_gen, get_colab_folder_id
 
@@ -14,7 +12,8 @@ def cli_pull(folder_struct_list, upload_file_name, upload_file_abs_path):
     :param upload_file_name:
     :param upload_file_abs_path:
     """
-    check_client_secret_exists()
+    AUTH_USER_ID = check_all_config()
+
     total = 100
     with typer.progressbar(length=total) as progress:
         drive = drive_auth()

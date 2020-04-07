@@ -93,6 +93,11 @@ colab-cli pull-nb lesson1-pets.ipynb
 ```sh
 colab-cli push-nb lesson1-pets.ipynb
 ``` 
+* To make a new notebook, you can use
+```sh
+colab-cli new-nb my_nb.ipynb
+``` 
+
 
 ## Author
 

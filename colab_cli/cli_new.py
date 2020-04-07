@@ -1,14 +1,12 @@
-from pathlib import Path
 import typer
 import webbrowser
-import json
 from colab_cli.gdrive_auth import drive_auth
-from colab_cli.utilities.checks import check_client_secret_exists, check_all_config
+from colab_cli.utilities.checks import check_all_config
 from colab_cli.utilities.files import create_new_file, get_file_meta
 from colab_cli.utilities.folders import fold_struct_gen, get_colab_folder_id
 
 
-def cli_open(folder_struct_list, upload_file_name, upload_file_abs_path):
+def cli_new(folder_struct_list, upload_file_name, upload_file_abs_path):
 
     AUTH_USER_ID = check_all_config()
 
@@ -22,7 +20,9 @@ def cli_open(folder_struct_list, upload_file_name, upload_file_abs_path):
         progress.update(45)
         new_file_metadata = get_file_meta(upload_file_name, final_folder_id)
         progress.update(60)
-        new_file_id = create_new_file(drive, new_file_metadata, upload_file_abs_path, upload_file_name, final_folder_id)
+        new_file_id = create_new_file(drive, new_file_metadata,
+                                      upload_file_abs_path, upload_file_name,
+                                      final_folder_id)
         progress.update(75)
         colab_url = f'https://colab.research.google.com/drive/{new_file_id}?authuser={AUTH_USER_ID}'
         drive_folder_url = f'https://drive.google.com/drive/u/{AUTH_USER_ID}/folders/{final_folder_id}'
@@ -30,9 +30,9 @@ def cli_open(folder_struct_list, upload_file_name, upload_file_abs_path):
         webbrowser.open(url=colab_url)
         progress.update(100)
 
-        message = f"\n {upload_file_name} added to drive folder"
-        message = typer.style(message, fg=typer.colors.GREEN, bold=True)
-        typer.echo(message)
+        # message = f"\n {upload_file_name} created in drive folder"
+        # message = typer.style(message, fg=typer.colors.GREEN, bold=True)
+        # typer.echo(message)
         message = f"\n drive folder url: {drive_folder_url}"
         message = typer.style(message, fg=typer.colors.CYAN, bold=True)
         typer.echo(message)

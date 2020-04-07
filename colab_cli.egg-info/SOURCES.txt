@@ -1,6 +1,7 @@
 README.md
 setup.py
 colab_cli/__init__.py
+colab_cli/cli_new.py
 colab_cli/cli_open.py
 colab_cli/cli_pull.py
 colab_cli/cli_update.py

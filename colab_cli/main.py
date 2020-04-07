@@ -1,3 +1,4 @@
+from colab_cli.cli_new import cli_new
 from colab_cli.cli_pull import cli_pull
 from colab_cli.cli_open import cli_open
 from shutil import copy
@@ -7,8 +8,10 @@ import json
 import glob
 import os
 
-from colab_cli.cli_update import cli_push
+from colab_cli.cli_push import cli_push
+from colab_cli.utilities.colab_metadata import get_colab_metadata
 from colab_cli.utilities.path_process import process_file_path
+
 
 APP_NAME = "colab-cli"
 app_dir = typer.get_app_dir(APP_NAME)
@@ -73,6 +76,39 @@ def list_nb():
 
 
 @app.command()
+def new_nb(file_path: Path = typer.Argument(
+    ...,
+    exists=False,
+    file_okay=True,
+    dir_okay=False,
+    writable=False,
+    readable=True,
+    resolve_path=True,
+)):
+    """
+    Create ipynb in colab
+    Note: Useful cmd in new projects
+    """
+    if file_path is None:
+        typer.echo("No file")
+        raise typer.Abort()
+    if file_path.is_file():
+        # folder_struct_list, upload_file_name, file_path = process_file_path(file_path)
+        # cli_new(folder_struct_list, upload_file_name, file_path)
+        typer.echo("file already exist try : open-nb ")
+        pass
+    elif file_path.is_dir():
+        typer.echo("is a directory")
+    elif not file_path.exists():
+        file_name = os.path.basename(file_path)
+        colab_meta_data = get_colab_metadata(file_name)
+        with open(file_name, 'w') as fp:
+            fp.write(json.dumps(colab_meta_data))
+        folder_struct_list, upload_file_name, file_path = process_file_path(file_path)
+        cli_new(folder_struct_list, upload_file_name, file_path)
+
+
+@app.command()
 def open_nb(file_path: Path = typer.Argument(
     ...,
     exists=True,
@@ -116,7 +152,6 @@ def pull_nb(file_path: Path = typer.Argument(
     if file_path.is_file():
         folder_struct_list, upload_file_name, file_path = process_file_path(file_path)
         cli_pull(folder_struct_list, upload_file_name, file_path)
-
     elif file_path.is_dir():
         typer.echo("is a directory")
     elif not file_path.exists():
