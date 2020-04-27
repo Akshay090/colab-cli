@@ -1,8 +1,18 @@
-# Welcome to colab-cli 👋
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
-[![Twitter: aks2899](https://img.shields.io/twitter/follow/aks2899.svg?style=social)](https://twitter.com/aks2899)
+<h4 align="center">
+    <a href="https://github.com/Akshay090/colab-cli">
+        <img src="https://raw.githubusercontent.com/Akshay090/colab-cli/master/.github/banner.png" alt="bingoset" />
+    </a>
+    <br>
+    <br>
+     Experience better workflow with google colab, local jupyter notebooks and git
 
-> Experience better workflow with google colab, local jupyter notebooks and git
+![PyPI - License](https://img.shields.io/pypi/l/colab-cli?style=plastic)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/colab-cli)
+![Twitter Follow](https://img.shields.io/twitter/follow/aks2899?style=social) 
+
+</h4>
+
+# Welcome to colab-cli 👋
 
 You can now easily manage working with jupyter notebooks 
 and google colab from cli. 
