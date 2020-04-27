@@ -6,6 +6,7 @@
     <br>
      Experience better workflow with google colab, local jupyter notebooks and git
 
+[![Downloads](https://pepy.tech/badge/colab-cli)](https://pepy.tech/project/colab-cli)
 ![PyPI - License](https://img.shields.io/pypi/l/colab-cli?style=plastic)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/colab-cli)
 ![Twitter Follow](https://img.shields.io/twitter/follow/aks2899?style=social) 
